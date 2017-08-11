@@ -9,7 +9,7 @@ class CheckToken
 {
     public function __construct (){
       $nonce     = $_GET['nonce'];
-      $token     = 'rewriteqr';
+      $token     = 'qrcodetest';
       $timestamp = $_GET['timestamp'];
       $echostr   = $_GET['echostr'];
       $signature = $_GET['signature'];
@@ -21,6 +21,7 @@ class CheckToken
       $str = sha1( implode( $array ) );
       if( $str == $signature && $echostr ){
           //第一次接入weixin api接口的时候
+          ob_clean();
           echo  $echostr;
         }
     }
