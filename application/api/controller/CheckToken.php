@@ -22,6 +22,8 @@ class CheckToken
       if( $str == $signature && $echostr ){
           //第一次接入weixin api接口的时候
           ob_clean();
+          echo $_SERVER['REMOTE_ADDR'];
+          echo $_SERVER['QUERY_STRING'];
           echo  $echostr;
         }
     }
