@@ -18,7 +18,7 @@ class UserAuth {
   private $openid;
   private $options;
   private $state;
-  public function __construct () {
+  public function index () {
     // $this->authCheck();
     $this->set();
     $this->reply();
