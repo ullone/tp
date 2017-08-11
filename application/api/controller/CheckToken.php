@@ -3,7 +3,7 @@ namespace app\api\controller;
 
 use think\Db;
 
-header("Content-Type:text/html; charset=utf-8");
+// header("Content-Type:text/html; charset=utf-8");
 
 class CheckToken
 {
