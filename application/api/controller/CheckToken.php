@@ -3,7 +3,7 @@ namespace app\api\controller;
 
 use think\Db;
 
-// header("Content-Type:text/html; charset=utf-8");
+header("Content-Type:text/html; charset=utf-8");
 
 class CheckToken
 {
@@ -22,8 +22,9 @@ class CheckToken
       if( $str == $signature && $echostr ){
           //第一次接入weixin api接口的时候
           ob_clean();
-          echo $_SERVER['REMOTE_ADDR'];
-          echo $_SERVER['QUERY_STRING'];
+          $fp=fopen("log.txt","w+");
+          $strText='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."\r\n";
+          fwrite($fp,$strText);
           echo  $echostr;
         }
     }
