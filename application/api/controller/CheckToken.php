@@ -8,6 +8,7 @@ header("Content-Type:text/html; charset=utf-8");
 class CheckToken
 {
     public function __construct (){
+      var_dump($_GET['nonce']); die ;
       $nonce     = $_GET['nonce'];
       $token     = 'qrcodetest';
       $timestamp = $_GET['timestamp'];
