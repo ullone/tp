@@ -13,6 +13,7 @@ class CheckToken
       $timestamp = $_GET['timestamp'];
       $echostr   = $_GET['echostr'];
       $signature = $_GET['signature'];
+      var_dump($echostr);die ;
       //形成数组，然后按字典序排序
       $array = array();
       $array = array($nonce, $timestamp, $token);
@@ -22,10 +23,7 @@ class CheckToken
       if( $str == $signature && $echostr ){
           //第一次接入weixin api接口的时候
           ob_clean();
-          $fp=fopen("log.txt","w+");
-          $strText='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."\r\n";
-          fwrite($fp,$strText);
-          echo  $echostr;
+          var_dump($echostr); die ;
         }
     }
 }
