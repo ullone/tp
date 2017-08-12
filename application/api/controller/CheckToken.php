@@ -8,7 +8,7 @@ header("Content-Type:text/html; charset=utf-8");
 class CheckToken
 {
     public function index (){
-      $myFile    = fopen("test.txt","w");
+      $myFile    = fopen("test.txt","w") or die('unable to open file');
       fwrite($myFile,'fdfafdf\n');
       fclose($myFile);
       // var_dump($_GET['nonce']); die ;
