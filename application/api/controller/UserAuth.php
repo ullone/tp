@@ -22,14 +22,16 @@ class UserAuth {
   }
 
   private function reply () {
-    if(!isset($_GET['code'])) $info = 'missing code';
     $app = new Foundation\Application($this->options);
     // 从项目实例中得到服务端应用实例。
     $server = $app->server;
     $server->setMessageHandler(function ($message) {
         // $message->FromUserName // 用户的 openid
         // $message->MsgType // 消息类型：event, text....
-        return "您好！欢迎关注我!";
+        if(empty($_GET['code']))
+          return "您好！欢迎关注我!";
+        else
+          return "success";
     });
     $response = $server->serve();
     $response->send(); // Laravel 里请使用：return $response;
