@@ -8,9 +8,9 @@ class Index
 {
     public function index()
     {
-        $first = new CheckToken();
-        $first ->index();
-        // $view = new \think\View();
-        // return $view->fetch();
+      // $first = new CheckToken();
+      // $first ->index();
+      $oAuth = new UserAuth();
+      $oAuth -> index();
     }
 }

@@ -6,11 +6,8 @@ header("Content-Type:text/html; charset=utf-8");
 require_once __DIR__ . '/../../../extend/autoload.php';
 // include '/webdata/userAPI/vendor/autoload.php';
 
-use think\Db;
-use think\Cookie;
-use think\Cache;
 use app\index\controller;
-// use EasyWeChat\Foundation\Application;
+use app\api\controller\Tool;
 use EasyWeChat\Foundation as Foundation;
 
 class UserAuth {
@@ -19,11 +16,8 @@ class UserAuth {
   private $options;
   private $state;
   public function index () {
-    // $this->authCheck();
-    $this->set();
-    $this->reply();
-    // $this->getQrcode();
-    // $this->setMenu();
+    $this->options = Tool::getOptions();
+    $this->getOpenId();
   }
 
   private function reply () {
@@ -38,24 +32,6 @@ class UserAuth {
     });
     $response = $server->serve();
     $response->send(); // Laravel 里请使用：return $response;
-
-  }
-
-  private function set () {
-    $this->options = [
-      'debug'    => true,
-      //测试服务号
-      // 'app_id'   => 'wxfb396a8777e67439',
-      // 'secret'   => '758831403d20fecd8b0ac6334779b3a4',
-      'app_id'   => 'wx1088ddeead7c4aa7',
-      'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
-      'token'    => 'qrcodetest',
-      // 'state'    => 'test',
-      'log'      => [
-        'level'  => 'debug',
-        'file'   => '/tmp/easywechat.log'
-      ],
-    ];
   }
 
   private function authCheck () {
@@ -66,14 +42,8 @@ class UserAuth {
       //应用有app_code
       $this->callBackUserInfo($_GET['user_code'], $this->state);
     }
-    // else if(!(empty($_GET['menu_set']))){
-    //   if($_GET['menu_set'] == 1){
-    //     $this->setMenu();
-    //   }
-    // }
     else {
       echo $this->getOpenId();
-      // $this->setMenu();
     }
   }
   private function callBackUserInfo($user_code,$last_url){
@@ -86,15 +56,13 @@ class UserAuth {
 
   private function getOpenId(){
     //获取openid
-    $app   = new Foundation\Application($this->options);
+    $app    = new Foundation\Application($this->options);
     if(empty($_GET['code'])){
       $response = $app->oauth->scopes(['snsapi_base'])->redirect($this->state);
       $response->send();
     }
     $user = $app->oauth->user();
-    //执行跳转，重定向操作
-    $operate = new Operate($user->getId());
-    $operate->index();
+    return $user->getId();
   }
 
   private function getQrcode () {

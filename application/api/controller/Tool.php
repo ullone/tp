@@ -1,0 +1,23 @@
+<?php
+namespace app\api\controller;
+
+class Tool {
+  public function index () {
+
+  }
+
+  public function static getOptions () {
+    return array(
+      'debug'    => true,
+      //测试服务号
+      'app_id'   => 'wx1088ddeead7c4aa7',
+      'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
+      'token'    => 'qrcodetest',
+      // 'state' => 'test',
+      'log'      => array(
+        'level'  => 'debug',
+        'file'   => '/tmp/easywechat.log'
+      ),
+    );
+  }
+}

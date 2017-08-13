@@ -16,7 +16,7 @@
       $this->getQrcode();
     }
 
-    public function set () {
+    private function set () {
       $this->options = [
         'debug'    => true,
         //测试服务号
@@ -33,7 +33,7 @@
       ];
     }
 
-    public function getQrcode() {
+    private function getQrcode() {
       $app = new Foundation\Application($this->options);
       $qrcode = $app->qrcode;
       $result = $qrcode->temporary(56, 6 * 24 * 3600);
