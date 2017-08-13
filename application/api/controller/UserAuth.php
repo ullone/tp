@@ -28,10 +28,10 @@ class UserAuth {
     $server->setMessageHandler(function ($message) {
         // $message->FromUserName // 用户的 openid
         // $message->MsgType // 消息类型：event, text....
-        if(!empty($_GET['code']))
+        // if(!empty($_GET['code']))
           return "fdfds";
-        else
-          return "success";
+        // else
+          // return "success";
     });
     $response = $server->serve();
     $response->send(); // Laravel 里请使用：return $response;
