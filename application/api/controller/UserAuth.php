@@ -17,8 +17,8 @@ class UserAuth {
   private $state;
   public function index () {
     $this->options = Tool::getOptions();
-    // $this->getOpenId();
-    $this->reply();
+    $this->getOpenId();
+    // $this->reply();
   }
 
   private function reply () {
@@ -57,7 +57,10 @@ class UserAuth {
 
   private function getOpenId(){
     //获取openid
-    $app   = new Foundation\Application($this->options);
+    $config = [
+
+    ];
+    $app   = new Foundation\Application($config);
     if(empty($_GET['code'])){
       $response = $app->oauth->scopes(['snsapi_base'])->redirect($this->state);
       $response->send();
