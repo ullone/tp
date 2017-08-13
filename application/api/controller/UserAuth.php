@@ -22,7 +22,7 @@ class UserAuth {
   }
 
   private function reply () {
-    // ... 前面部分省略
+    if(empty($_GET['code'])) exit('missing code');
     $app = new Foundation\Application($this->options);
     // 从项目实例中得到服务端应用实例。
     $server = $app->server;
