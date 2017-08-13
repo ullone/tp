@@ -6,7 +6,7 @@ class Tool {
 
   }
 
-  public function static getOptions () {
+  public static function getOptions () {
     return array(
       'debug'    => true,
       //测试服务号
