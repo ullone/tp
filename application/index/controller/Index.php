@@ -3,6 +3,7 @@ namespace app\index\controller;
 
 use \think\View;
 use app\api\controller\CheckToken;
+use app\api\controller\UserAuth;
 
 class Index
 {
