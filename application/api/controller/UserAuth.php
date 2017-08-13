@@ -17,7 +17,8 @@ class UserAuth {
   private $state;
   public function index () {
     $this->options = Tool::getOptions();
-    $this->getOpenId();
+    // $this->getOpenId();
+    $this->reply();
   }
 
   private function reply () {
@@ -56,13 +57,15 @@ class UserAuth {
 
   private function getOpenId(){
     //获取openid
-    $app    = new Foundation\Application($this->options);
+    $app   = new Foundation\Application($this->options);
     if(empty($_GET['code'])){
       $response = $app->oauth->scopes(['snsapi_base'])->redirect($this->state);
       $response->send();
     }
     $user = $app->oauth->user();
-    return $user->getId();
+    //执行跳转，重定向操作
+    // $operate = new Operate($user->getId());
+    // $operate->index();
   }
 
   private function getQrcode () {
