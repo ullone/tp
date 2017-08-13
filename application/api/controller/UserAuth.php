@@ -16,6 +16,7 @@ class UserAuth {
   private $options;
   private $state;
   public function index () {
+    echo 'hha'; die;
     $this->options = Tool::getOptions();
     $this->getOpenId();
     // $this->reply();
@@ -58,7 +59,11 @@ class UserAuth {
   private function getOpenId(){
     //获取openid
     $config = [
-
+      'app_id'   => 'wx1088ddeead7c4aa7',
+      'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
+      'redirect_uri' =>
+      'response_type' => 'code',
+      's'
     ];
     $app   = new Foundation\Application($config);
     if(empty($_GET['code'])){
