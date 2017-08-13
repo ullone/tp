@@ -60,7 +60,7 @@ class UserAuth {
     $config = [
       'app_id'   => 'wx1088ddeead7c4aa7',
       'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
-      'redirect_uri' =>
+      'redirect_uri' => '',
       'response_type' => 'code',
       's'
     ];
