@@ -13,7 +13,6 @@ class Tool {
       'app_id'   => 'wx1088ddeead7c4aa7',
       'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
       'token'    => 'qrcodetest',
-      // 'state' => 'test',
       'log'      => [
         'level'  => 'debug',
         'file'   => '/tmp/easywechat.log'

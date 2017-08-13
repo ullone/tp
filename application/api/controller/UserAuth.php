@@ -16,10 +16,9 @@ class UserAuth {
   private $options;
   private $state;
   public function index () {
-    echo 'hha'; die;
     $this->options = Tool::getOptions();
-    $this->getOpenId();
-    // $this->reply();
+    // $this->getOpenId();
+    $this->reply();
   }
 
   private function reply () {
