@@ -11,7 +11,7 @@
   class Qrcode{
     private $options;
     private $user_code;
-    public function __construct () {
+    public function index () {
       $this->options = [
         // 'debug'    => true,
         //测试服务号
