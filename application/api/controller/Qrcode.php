@@ -20,6 +20,7 @@
         'redirect_uri'     => 'rewrite.ullone.com/api/Oauth',
         'response_type'    => 'code',
         'scope'            => 'snsapi_userinfo',
+        'text'             => 'baidu.com',
         'state'            => 'test#wechat_redirect',
         // '#wechat_redirect' => '#wechat_redirect',
         // 'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
