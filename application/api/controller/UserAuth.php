@@ -28,7 +28,7 @@ class UserAuth {
         $openId = $message->FromUserName; // 用户的 openid
         // $message->MsgType // 消息类型：event, text....
         // if(!empty($_GET['code']))
-        return "fdfds".$openId;
+        return $openId;
         // else
           // return "success";
     });
