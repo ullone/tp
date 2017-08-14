@@ -11,7 +11,8 @@ class Index
     {
       // $first = new CheckToken();
       // $first ->index();
-      $oAuth = new UserAuth();
-      $oAuth -> index();
+      echo 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1088ddeead7c4aa7&redirect_uri=http://rewrite.ullone.com/api/Oauth&response_type=code&scope=snsapi_base&state=123#wechat_redirect';
+      // $oAuth = new UserAuth();
+      // $oAuth -> index();
     }
 }
