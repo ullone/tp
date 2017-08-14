@@ -19,7 +19,7 @@
         'secret'           => 'f8779402d2d919717ae7fe8a4fc26230',
         'redirect_uri'     => 'rewrite.ullone.com/api/Oauth',
         'response_type'    => 'code',
-        'scope'            => 'snsapi_base',
+        'scope'            => 'snsapi_userinfo',
         'state'            => 'test#wechat_redirect',
         // '#wechat_redirect' => '#wechat_redirect',
         // 'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
@@ -31,23 +31,6 @@
         // ],
       ];
       $this->getQrcode();
-    }
-
-    private function set () {
-      $this->options = [
-        'debug'    => true,
-        //测试服务号
-        // 'app_id'   => 'wxfb396a8777e67439',
-        // 'secret'   => '758831403d20fecd8b0ac6334779b3a4',
-        'app_id'   => 'wx1088ddeead7c4aa7',
-        'secret'   => 'f8779402d2d919717ae7fe8a4fc26230',
-        'token'    => 'qrcodetest',
-        // 'state'    => 'test',
-        'log'      => [
-          'level'  => 'debug',
-          'file'   => '/tmp/easywechat.log'
-        ],
-      ];
     }
 
     private function getQrcode() {
