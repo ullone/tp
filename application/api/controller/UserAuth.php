@@ -25,10 +25,10 @@ class UserAuth {
     // 从项目实例中得到服务端应用实例。
     $server = $app->server;
     $server->setMessageHandler(function ($message) {
-        // $message->FromUserName // 用户的 openid
+        $openId = $message->FromUserName; // 用户的 openid
         // $message->MsgType // 消息类型：event, text....
         // if(!empty($_GET['code']))
-        return "fdfds";
+        return "fdfds".$openId;
         // else
           // return "success";
     });
