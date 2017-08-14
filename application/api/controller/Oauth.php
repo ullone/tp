@@ -17,6 +17,7 @@ class Oauth {
   private $state;
   public function index () {
     // $this->options = Tool::getOptions();
+    exit('haha');die;
     $this->authCheck();
   }
 
