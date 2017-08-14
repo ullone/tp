@@ -26,6 +26,7 @@ class Oauth {
     $jsondecode = json_decode($weixin); //对JSON格式的字符串进行编码
     $array = get_object_vars($jsondecode);//转换成数组
     $openid = $array['openid'];//输出openid
+    header('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9c7b6afdec97691d&redirect_uri=https%3A%2F%2Fv.cunhao.net%2Fcounty%2Fhome%2Fd%3Fwid%3D105%26snsapi%3Dbase&response_type=code&scope=snsapi_base&state=&component_appid=wx54fc5424f9be5442#wechat_redirect');
     // exit($openid);
     // if(empty($_GET['url']))
     //   $this->state = 'null';
