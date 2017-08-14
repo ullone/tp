@@ -17,7 +17,6 @@ class Oauth {
   private $state;
   public function index () {
     // $this->options = Tool::getOptions();
-    exit('haha');die;
     $this->authCheck();
   }
 
@@ -27,7 +26,7 @@ class Oauth {
     $jsondecode = json_decode($weixin); //对JSON格式的字符串进行编码
     $array = get_object_vars($jsondecode);//转换成数组
     $openid = $array['openid'];//输出openid
-    return $openid;
+    exit($openid);
     // if(empty($_GET['url']))
     //   $this->state = 'null';
     // else $this->state = $_GET['url'];
